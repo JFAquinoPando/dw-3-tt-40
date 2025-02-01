@@ -1,0 +1,18 @@
+# Activar RewriteEngine
+#RewriteEngine on
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#//RewriteCond %{REQUEST_FILENAME}.php -f
+
+#   Reescribir la URL solicitada por el usuario
+
+#   Home
+#//RewriteRule ^inicio$ /index.php [L]
+
+#   Producto
+#   Entrada: producto/NOMBRE_PRODUCTO/
+#   Salida: productos.php?id=NOMBRE_PRODUCTO
+RewriteEngine On
+#RewriteBase /
+RewriteRule ^imagen/(.*)$ imagen.php?nombre=$1 [L]
