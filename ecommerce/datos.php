@@ -6,7 +6,10 @@
     $datos = [];
     while ($fila = $res->fetch_assoc()) {
         array_push($datos,[
-            "imagen" => "imagen/{$fila["campo3"]}",
+            "id" => $fila["id"],
+            "imagen" =>  str_contains( $fila["campo3"], "https://" ) 
+                        ?  $fila["campo3"]
+                        : "imagen/{$fila["campo3"]}",
             "nombre" => $fila["campo1"],
             "precio" => $fila["campo2"]
         ]);
